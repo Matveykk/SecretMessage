@@ -23,9 +23,6 @@ public class MainDBWork {
         }
     }
 
-    public MainDBWork() throws SQLException {
-    }
-
     public static String saveToDB(String message) throws SQLException {
 
         ArrayList<String> messageAndHash = SecretMessage.SendMessage(message);
@@ -66,29 +63,5 @@ public class MainDBWork {
 
         statement.execute(sql);
 
-    }
-
-    public static boolean hasUserId(Long id) {
-        String userId = id + "";
-
-        String sql = "select * from userdata where UserID = '" + userId + "'";
-
-        try (Connection connection = ConnectionManager.open();
-             Statement statement = connection.createStatement()) {
-
-            ResultSet resultSet = statement.executeQuery(sql);
-
-            resultSet.next();
-
-            String hasStr = resultSet.getString("userid");
-
-            if (hasStr != null) {
-                return true;
-            }
-
-        } catch (SQLException e) {
-            return false;
-        }
-        return false;
     }
 }
