@@ -11,6 +11,8 @@ import java.util.List;
 
 public class MainBot implements UpdatesListener {
 
+    // test
+
     public static final String BOTTOKEN = "bot.token";
     private boolean isSave = false;
     private boolean isTake = false;
