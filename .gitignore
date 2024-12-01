@@ -38,4 +38,4 @@ build/
 .DS_Store
 
 ### None git ###
-application.properties
+.src/main/resources/application.properties
